@@ -1,7 +1,7 @@
 package kleine.com.reqtrader.repository;
 
 import io.reactivex.Single;
-import kleine.com.reqtrader.Constants;
+import kleine.com.reqtrader.Util.Constants;
 import kleine.com.reqtrader.model.CoinList;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;

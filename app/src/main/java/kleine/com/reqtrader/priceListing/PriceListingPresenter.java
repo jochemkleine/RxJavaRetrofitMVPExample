@@ -6,7 +6,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
-import kleine.com.reqtrader.Constants;
+import kleine.com.reqtrader.Util.Constants;
 import kleine.com.reqtrader.repository.CoinRepository;
 
 class PriceListingPresenter {
