@@ -15,7 +15,7 @@ public class PriceListAdapter extends RecyclerView.Adapter<PriceListViewholder> 
 
     private  List<Coin> coins;
 
-    public PriceListAdapter (List<Coin> coins){
+    PriceListAdapter(List<Coin> coins){
         this.coins = coins;
     }
 
