@@ -5,6 +5,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 import kleine.com.reqtrader.R;
@@ -27,7 +29,8 @@ public class PriceListAdapter extends RecyclerView.Adapter<PriceListViewholder> 
     @Override
     public void onBindViewHolder(@NonNull PriceListViewholder holder, int i) {
         holder.name.setText(coins.get(i).getName());
-        holder.symbol.setText(coins.get(i).getName());
+        holder.symbol.setText(coins.get(i).getSymbol());
+        Picasso.get().load(coins.get(i).getLogo()).into(holder.logo);
     }
 
     @Override

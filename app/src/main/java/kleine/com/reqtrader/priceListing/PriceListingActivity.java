@@ -24,7 +24,6 @@ public class PriceListingActivity extends AppCompatActivity implements PriceList
         setContentView(R.layout.activity_main);
         presenter = new PriceListingPresenter(this);
         presenter.fetchCoinData();
-        
         initRecyclerView();
     }
 
