@@ -1,4 +1,4 @@
-package kleine.com.reqtrader.Util;
+package kleine.com.reqtrader.util;
 
 import android.util.Log;
 

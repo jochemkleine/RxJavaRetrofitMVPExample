@@ -1,4 +1,4 @@
-package kleine.com.reqtrader.Util;
+package kleine.com.reqtrader.util;
 
 public class Constants {
 

@@ -3,7 +3,7 @@ package kleine.com.reqtrader.repository;
 import com.google.gson.JsonObject;
 
 import io.reactivex.Observable;
-import kleine.com.reqtrader.Util.Constants;
+import kleine.com.reqtrader.util.Constants;
 import kleine.com.reqtrader.model.CoinList;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
