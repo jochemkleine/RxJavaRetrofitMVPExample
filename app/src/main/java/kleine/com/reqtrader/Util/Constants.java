@@ -8,6 +8,6 @@ public class Constants {
 
 
     public static final String UNIT_USD = "USD";
-    
+
     public String temp;
 }

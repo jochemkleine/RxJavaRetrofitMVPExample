@@ -2,20 +2,19 @@ package kleine.com.reqtrader.priceListing;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import java.util.List;
 
 import kleine.com.reqtrader.R;
-import kleine.com.reqtrader.model.Coin;
+import kleine.com.reqtrader.model.CoinMetaData;
 
 public class PriceListAdapter extends RecyclerView.Adapter<PriceListViewholder> {
 
-    private  List<Coin> coins;
+    private List<CoinMetaData> coins;
 
-    PriceListAdapter(List<Coin> coins){
+    PriceListAdapter(List<CoinMetaData> coins){
         this.coins = coins;
     }
 
@@ -29,7 +28,6 @@ public class PriceListAdapter extends RecyclerView.Adapter<PriceListViewholder> 
     public void onBindViewHolder(@NonNull PriceListViewholder holder, int i) {
         holder.name.setText(coins.get(i).getName());
         holder.symbol.setText(coins.get(i).getName());
-        Log.d("Adapter", "setting coin : + "  + coins.get(i).getSymbol());
     }
 
     @Override
@@ -37,7 +35,7 @@ public class PriceListAdapter extends RecyclerView.Adapter<PriceListViewholder> 
         return coins.size();
     }
 
-    public void setCoinList(List<Coin> coins) {
+    void setCoinList(List<CoinMetaData> coins) {
         this.coins = coins;
     }
 }

@@ -1,6 +1,8 @@
 package kleine.com.reqtrader.repository;
 
-import io.reactivex.Single;
+import com.google.gson.JsonObject;
+
+import io.reactivex.Observable;
 import kleine.com.reqtrader.Util.Constants;
 import kleine.com.reqtrader.model.CoinList;
 import retrofit2.Retrofit;
@@ -21,7 +23,17 @@ public class CoinRepository {
         }
     }
 
-    public Single<CoinList> getCmcLatestListing(int start, int limit, String convertUnit){
+    public Observable<CoinList> getCmcLatestListing(int start, int limit, String convertUnit){
+        checkCmcRetrofitInstantiation();
+        return coinMarketCapService.getLatestListings(Constants.API_KEY, Constants.SORT_MARKET_CAP, start, limit, "tokens", convertUnit);
+    }
+
+    public Observable<JsonObject> getCoinMetaData(String symbol){
+        checkCmcRetrofitInstantiation();
+        return coinMarketCapService.getCoinMetaData(Constants.API_KEY, symbol);
+    }
+
+    public void checkCmcRetrofitInstantiation(){
         if (coinMarketCapService == null) {
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(Constants.CMC_BASE_URL)
@@ -30,6 +42,5 @@ public class CoinRepository {
                     .build();
             coinMarketCapService = retrofit.create(CoinMarketCapService.class);
         }
-        return coinMarketCapService.getLatestListings(Constants.API_KEY, Constants.SORT_MARKET_CAP, start, limit, "tokens", convertUnit);
     }
 }

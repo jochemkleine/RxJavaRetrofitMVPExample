@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import kleine.com.reqtrader.R;
-import kleine.com.reqtrader.model.Coin;
+import kleine.com.reqtrader.model.CoinMetaData;
 
 
 public class PriceListingActivity extends AppCompatActivity implements PriceListingView {
@@ -25,11 +25,12 @@ public class PriceListingActivity extends AppCompatActivity implements PriceList
         presenter = new PriceListingPresenter(this);
         presenter.fetchCoinData();
         
-        initRecyclerView(); 
+        initRecyclerView();
     }
 
+
     private void initRecyclerView() {
-        adapter = new PriceListAdapter(new ArrayList<Coin>());
+        adapter = new PriceListAdapter(new ArrayList<CoinMetaData>());
         RecyclerView coinRecyclerview = findViewById(R.id.coinRecyclerView);
         LinearLayoutManager llm = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         coinRecyclerview.setLayoutManager(llm);
@@ -37,8 +38,8 @@ public class PriceListingActivity extends AppCompatActivity implements PriceList
     }
 
     @Override
-    public void displayCoinData(List<Coin> coins) {
-        adapter.setCoinList(coins);
+    public void displayCoinMetaData(List<CoinMetaData> coinMetaDataList) {
+        adapter.setCoinList(coinMetaDataList);
         adapter.notifyDataSetChanged();
     }
 

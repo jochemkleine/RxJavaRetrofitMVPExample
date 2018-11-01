@@ -13,6 +13,8 @@ public class Coin {
     @SerializedName("symbol")
     private String symbol;
 
+    @SerializedName("logo")
+    private String logo;
 
 
     public String getId() {
@@ -25,5 +27,9 @@ public class Coin {
 
     public String getSymbol() {
         return symbol;
+    }
+
+    public String getLogo() {
+        return logo;
     }
 }
